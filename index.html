@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>SpaceX to Mars</title>
+	<!--bootstrap-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!--jquery-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!--firebase-->
+	<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+	<!--moment-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.2/moment.min.js"></script>
+</head>
+<body>
+<audio autoplay loop>
+  <source src="https://firebasestorage.googleapis.com/v0/b/space-6d716.appspot.com/o/SpaceX_BFR_-_Hypersonic_Passenger_Rockets_New_York_to_Shanghai_in_39_min%5BMp3Converter.net%5D.mp3?alt=media&token=729848c9-6aff-4cd3-93be-9d4770c27656" />
+
+</audio>
+<video id="bgvid" playsinline autoplay muted loop style="position: absolute;top: 0;left: 0;min-height: 100%;min-width: 100%">
+  <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
+
+<source src="https://firebasestorage.googleapis.com/v0/b/space-6d716.appspot.com/o/SpaceX%20BFR%20-%20Hypersonic%20Passenger%20Rockets%2C%20New%20York%20to%20Shanghai%20in%2039%20min%20(1).mp4?alt=media&token=88194dbb-2348-4093-8bdf-bf980b5861e4" type="video/mp4">
+</video>
+  <button type="button" class="btn btn-primary btn-lg" style="position: absolute;left: 580px;top: 700px" id="welcome">Welcome to your SpaceX Journey</button>
+
+	
+
+<div class="container" style="background-color: black;position: absolute;left: 100px;
+z-index: 1000;display: none">
+<!--jumbotron-->
+	<div class="jumbotron" >
+	<h1 style="text-align: center;">Welcome to SpaceX BFR</h1>
+	  <p style="text-align: center;">Anywhere on Earth in under One Hour</p>
+	
+	</div>
+<!--OUTPUT list-->
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">Current Rocket Schedule</h3>
+	  </div>
+	  <div class="panel-body">
+	                
+  		<table class="table">
+    	<thead>
+      		<tr>
+        		<th>Rocket Name</th>
+        		<th>Destination</th>
+        		<th>Frequency(min)</th>
+        		<th>Next Arrival</th>
+        		<th>Minutes Away</th>
+        	</tr>
+    	</thead>
+			<tr>
+				<td>Tesla Y</td>
+        		<td>Shanghai</td>
+        		<td>30</td>
+        		<td>13:00</td>
+        		<td>15</td>
+			</tr>
+			<tr>
+				<td>Tesla X</td>
+        		<td>Hongkong</td>
+        		<td>25</td>
+        		<td>16:00</td>
+        		<td>38</td>
+			</tr>
+			<tr>
+				<td>Tesla S</td>
+        		<td>Tokyo</td>
+        		<td>25</td>
+        		<td>11:00</td>
+        		<td>20</td>
+			</tr>
+			<tr>
+				<td>Tesla 3</td>
+        		<td>New Delhi</td>
+        		<td>33</td>
+        		<td>22:00</td>
+        		<td>38</td>
+			</tr>
+
+    	<!--output list-->
+    	<tbody id="display" >
+    		
+    	</tbody>
+     </table>
+	  </div>
+	</div>
+
+<!--INPUT list-->
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">Add Rocket</h3>
+	  </div>
+	  <div class="panel-body">
+		<div class="form-group">
+		  <label for="text">Rocket Name</label>
+		  <input type="text" class="form-control" id="name">
+		</div>
+		<div class="form-group">
+		  <label for="text">Destination</label>
+		  <input type="text" class="form-control" id="dest">
+		</div>
+		<div class="form-group">
+		  <label for="text">First Train Time(hh:mm - military time)</label>
+		  <input type="text" class="form-control" id="first">
+		</div>
+		<div class="form-group">
+		  <label for="text">Frequency(min)</label>
+		  <input type="text" class="form-control" id="freq">
+		</div>
+		<input type="submit" class="btn btn-info" value="Submit" id="submit">
+	  </div>
+	</div>
+	<!--javascript-->
+	<script type="text/javascript" src="js.js"></script>
+</div>
+</body>
+</html>
